@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-xl font-medium transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black;
+  }
+  
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-700 hover:to-blue-600 focus:ring-blue-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-zinc-800 text-gray-300 hover:bg-zinc-700 hover:text-white focus:ring-zinc-600;
+  }
+
+  .input-group {
+    @apply relative flex items-center;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-white rounded-xl border-2 border-gray-100 focus:border-blue-500 focus:outline-none transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .glass-effect {
+    @apply bg-zinc-900/70 backdrop-blur-lg border border-zinc-800;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
